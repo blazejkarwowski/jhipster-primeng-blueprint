@@ -1,5 +1,5 @@
 <%#
- Copyright 2013-2019 the original author or authors from the JHipster project.
+ Copyright 2013-2020 the original author or authors from the JHipster project.
 
  This file is part of the JHipster project, see https://www.jhipster.tech/
  for more information.
@@ -28,13 +28,10 @@
         "strict": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
+      	"suppressImplicitAnyIndexErrors": true,
         "skipLibCheck": true,
-        "suppressImplicitAnyIndexErrors": true,
         "outDir": "<%= DIST_DIR %>app",
         "lib": ["es7", "dom"],
-        "typeRoots": [
-            "node_modules/@types"
-        ],
         "baseUrl": "./",
         "paths": {
             "app/*": ["<%= MAIN_SRC_DIR %>app/*"]
@@ -42,11 +39,10 @@
         "importHelpers": true,
         "allowJs": true
     },
-    "include": [
-        "<%= MAIN_SRC_DIR %>app",
-        "<%= TEST_SRC_DIR %>"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
-}
+    "angularCompilerOptions": {
+      "genDir": "<%= AOT_DIR %>",
+      "fullTemplateTypeCheck": true,
+      "preserveWhitespaces": true
+    }
+  }
+  
